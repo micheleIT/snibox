@@ -48,8 +48,10 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: yarn
-      run: yarn install --check-files
+    - name: Run install
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: install --check-files # will run `yarn install` command
     - name: Setup DB
       run: bundle exec rake db:setup
     - name: Run headless test
