@@ -41,6 +41,17 @@ jobs:
       with:
         source: ".env.test.sample"
         target: ".env"
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.x'
+        architecture: 'x64'
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '2.x'
+        architecture: 'x64'
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10'
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
